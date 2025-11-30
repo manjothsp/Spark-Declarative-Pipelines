@@ -1,0 +1,23 @@
+When working with data in Spark, we often want to focus on WHAT we want to do with the data, rather than HOW spark executes under the hood.
+This is where DECLARATIVE comes in.
+
+One of the biggest advantage  of declarative pipelines is that they remove lot of traditional overhead in spark jobs.
+like coalescing , partitioning, caching and tunning.
+
+Declarative pipelines handle these automatically. Spark figures out the most efficient way to process your data.
+
+Declarative pipelines reduces the long, repetitive code. 
+For example SCD2, involves lots of steps. With declarative pipelines you can leverage tools like AutoCDC which
+handles operations automatically.This lets you focus on business rules rather than code.
+
+
+KEY COMPONENTS:
+
+1) FLOWS -> a foundational data processing concept which supports both batch and stream semantics. A flow reads data from a source, 
+applies user defined processing logic  and writes result into target dataset.
+2) DataSet -> a queryable object which is O/P of the flow within a pipeline.
+  - Streaming table
+  - Materialized View
+  - Temporary View
+  - Sink
+3) Pipeline -> A pipeline contains one or more flows, streaming table or MV. It is basically a DAG of all components.
